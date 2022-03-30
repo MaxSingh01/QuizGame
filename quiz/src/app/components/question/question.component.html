@@ -1,0 +1,106 @@
+<div class="contaner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <ng-container *ngIf="!isQUizComplete">
+    <div class="welcomebox" style="display: flex; justify-content: center; flex-direction: column;">
+      <div style="display: flex; color: white; flex-direction: column;">
+        <h1  style="font-size: 40px; margin-bottom: 40px ;font-weight: bold;">Welcome TO Quiz</h1>
+        <p style="font-size: 25px; margin-bottom: 40px ;font-weight: bold;"> {{name}}</p>
+        <h1 style="font-weight: bold;font-size: 25px; margin-bottom: 40px ">Question: {{currentQuestion+1}} of {{questionList.length}}</h1>
+      </div>
+      <div class="question" style="display: flex; justify-content: center; color: white;">
+        <div class="=card">
+          <h3 style="font-size: 30px;
+          font-weight: bold; margin-bottom: 40px ">{{questionList[currentQuestion]?.questionText}}</h3>
+        </div>
+      </div>
+      <div class="option" style="display: flex; color: rgb(0, 0, 0);">
+        <ol style="padding: unset; list-style-type: none; list-style-type: none ;  height: 50px;  border: 1px solid white;    border-radius: 4px;   width: 70%;
+          margin-left: 17%; " *ngFor="let option of questionList[currentQuestion]?.options">
+          <li  (click)="answer(currentQuestion+1,option)">
+            <div appChangeBg [iscorrect]="option.correct" class="card">{{option.text}}</div>
+          </li>
+        </ol>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button [disabled]="currentQuestion===0" class="btn" (click)=" priviousQuestion()"><img style="width: 30px;"
+            src="../../../assets/right-arrow (1).png" alt="" srcset=""></button>
+        <button [disabled]="currentQuestion===questionList.length" class="btn" (click)=" nextQuestion()"> <img style="width: 30px;" src="../../../assets/right-arrow.png"
+            alt="" srcset=""></button>
+      </div>
+    </div>
+  </ng-container> -->
+  <ng-container  *ngIf="isQUizComplete">
+    <div style="display:flex ;justify-content: center; padding-top: 3%;">
+      <div style="    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    border: 2px solid white; width: 40%; ">
+
+        <div style="display: flex; padding: 22px">
+          <h1 style="font-size: 32px; font-weight: bold ;margin-bottom: 40px ;background: black; color :white">LeaderBoard</h1>
+        </div>
+        <div style="display: flex; padding: 22px">
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">name</p>
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">score</p>
+        </div>
+        <div style="display: flex; padding: 22px">
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">Ajay</p>
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">9</p>
+        </div>
+        <div style="display: flex; padding: 22px">
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">{{name}}</p>
+          <p style="width: 100%;font-size: 22px; font-weight: bold ">{{correctAnswer}}</p>
+        </div>
+
+      </div>
+      <div style="    display: flex;
+    flex-direction: column;
+    padding: 1%">
+        <div>
+          <img style="       width: 13%;
+      display: flex;
+      margin: 0px 70%;
+      padding: 13px;" src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg" alt=""
+            srcset="">
+        </div>
+        <div style="color:  white; display: flex; flex-direction: column;">
+          <div
+            style="display: flex; flex-direction:column; margin-left: auto; font-size: 18px; font-weight: bold;margin-bottom: 40px ">
+            <h1 style="font-size: 32px; font-weight: bold ;margin-bottom: 40px ">Congratulations !! <br> You have
+              Compeleted the Quiz <br> Below is your result</h1>
+            <p style="margin-bottom: 40px ">Total Question :{{questionList.length}}</p>
+            <p style="margin-bottom: 40px ">Total Correct Answered:{{correctAnswer}}</p>
+            <p style="margin-bottom: 40px ">Total Wrong Answered:{{wrongAnswer}}</p>
+            <p style="margin-bottom: 40px ">Your Score:{{correctAnswer}}</p>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <button style="font-size: 25px; font-weight: bold;" class="btn btn2 btn-danger"
+              (click)="reset()">Reset</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+</div>

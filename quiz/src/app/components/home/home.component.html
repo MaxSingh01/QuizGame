@@ -1,0 +1,42 @@
+<div class="contaner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="welcomebox" style="display: flex; justify-content: center; flex-direction: column;">
+    <div style="display: flex; color: white; flex-direction: column;">
+      <h1 style="font-size: 40px; font-weight: bold; margin-bottom: 40px">Welcome TO Quiz</h1>
+      <p style="font-size: 25px; font-weight: bold; margin-bottom: 40px">Quiz will contain 5 question of one mark</p>
+      <p  style="font-size: 25px; font-weight: bold; margin-bottom: 40px">rules:</p>
+      <p  style="font-size: 25px; font-weight: bold; margin-bottom: 40px">1. correct queston will give you one mark</p>
+      <p  style="font-size: 25px; font-weight: bold; margin-bottom: 40px">1. correct queston will give you minus one mark</p>
+    </div>
+    <form  style="display: flex; flex-direction: column;" >
+      <div class="input-group flex-nowrap" style="    margin-bottom: 15px; display: flex;width: 70%  ">
+        <input  style="font-size: 25px; font-weight: bold; margin-bottom: 40px"  #name type="text" class="form-control" name="name" placeholder="Enter Your Username"
+          aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div style="display: flex; justify-content: flex-start;" >
+        <button  style="font-size: 25px; font-weight: bold;"  class="btn btn2 btn-danger" (click)="statquiz()">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

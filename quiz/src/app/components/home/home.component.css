@@ -1,0 +1,17 @@
+.contaner{
+  height: 100vh;
+  background-image: url('../../../assets/pic/joanna-kosinska-7ACuHoezUYk-unsplash.jpg');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+.welcomebox{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* margin: auto; */
+    margin-left: auto;
+    width: 51%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 90vh;
+}

@@ -1,0 +1,57 @@
+.mainbox{
+    display: flex; justify-content: flex-end; height: 100vh;
+    background-image: url('../../../assets/pic/joanna-kosinska-7ACuHoezUYk-unsplash.jpg');
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.box{
+  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px;
+        width: 40%;
+        margin: auto 0px;
+        /* margin: auto; */
+        box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);
+        height: 50%;
+        margin-right: 50px;
+}
+
+
+.form-control{
+    border: unset;
+    background: transparent;
+    border: unset;
+    border-bottom: 2px solid grey;
+    color: white;
+}
+.input-group-text{
+    background: transparent;
+    color: white;
+    border: unset;
+    width: 15%;
+}
+.btn{
+    background: transparent;
+    border: unset;
+    color: white;
+    font-weight: bold;
+}
+.line{
+    border-right: 2px solid white; 
+    border-right: 2px solid white;
+     height: 24px;
+                
+     /* margin: auto; */
+    margin: auto 0px;
+}
+.img{
+    width: 50%;
+}
+.btn2{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    border: 2px solid white;
+}

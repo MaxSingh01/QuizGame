@@ -1,0 +1,33 @@
+<div class="mainbox">
+    <div class="box">
+        <div style="    display: flex; height: 100%; flex-direction: column;">
+            <div style="display: flex; justify-content: center; margin: 15px;">
+                <button  type="button" class="btn btn-light">Login</button>
+                <div class="line"></div>
+                <button routerLink="/signup" type="button" class="btn btn-light">Signup</button>
+            </div>
+            <div *ngIf="msg" class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>{{msg}}</strong>
+              <button type="button " class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="input-group flex-nowrap" style="    margin-bottom: 15px;   ">
+                <span class="input-group-text" id="addon-wrapping"><img class="img" src="../../../assets/pic/mail.png" alt="" srcset=""> </span>
+                <input type="text" class="form-control"name="email" ngModel placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap" style="    margin-bottom: 15px;  ">
+                <span class="input-group-text" id="addon-wrapping"><img class="img" src="../../../assets/pic/lock (1).png" alt="" srcset=""></span>
+                <input type="text" class="form-control" name="password" ngModel placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <button  type="submit" class="btn btn2 btn-danger">Login</button>
+            </div>
+        </form>
+            <div style="display: flex; justify-content: center;">
+                <p style="color:white;font-size: 14px ; font-weight: bold;">New User? Register Here</p>
+            </div>
+        </div>
+    </div>
+</div>
