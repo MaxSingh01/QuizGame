@@ -45,11 +45,14 @@
       <div class="d-flex justify-content-between">
         <button [disabled]="currentQuestion===0" class="btn" (click)=" priviousQuestion()"><img style="width: 30px;"
             src="../../../assets/right-arrow (1).png" alt="" srcset=""></button>
-        <button [disabled]="currentQuestion===questionList.length" class="btn" (click)=" nextQuestion()"> <img style="width: 30px;" src="../../../assets/right-arrow.png"
+        <button [disabled]="currentQuestion===questionList.length-1" class="btn" (click)=" nextQuestion()"> <img style="width: 30px;" src="../../../assets/right-arrow.png"
             alt="" srcset=""></button>
       </div>
     </div>
-  </ng-container> -->
+  </ng-container>
+
+
+
   <ng-container  *ngIf="isQUizComplete">
     <div style="display:flex ;justify-content: center; padding-top: 3%;">
       <div style="    display: flex;

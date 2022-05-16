@@ -1,33 +1,36 @@
-<div class="mainbox">
-    <div class="box">
-        <div style="    display: flex; height: 100%; flex-direction: column;">
-            <div style="display: flex; justify-content: center; margin: 15px;">
-                <button  type="button" class="btn btn-light">Login</button>
-                <div class="line"></div>
-                <button routerLink="/signup" type="button" class="btn btn-light">Signup</button>
-            </div>
-            <div *ngIf="msg" class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>{{msg}}</strong>
-              <button type="button " class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-            </div>
-            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-            <div class="input-group flex-nowrap" style="    margin-bottom: 15px;   ">
-                <span class="input-group-text" id="addon-wrapping"><img class="img" src="../../../assets/pic/mail.png" alt="" srcset=""> </span>
-                <input type="text" class="form-control"name="email" ngModel placeholder="Username" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap" style="    margin-bottom: 15px;  ">
-                <span class="input-group-text" id="addon-wrapping"><img class="img" src="../../../assets/pic/lock (1).png" alt="" srcset=""></span>
-                <input type="text" class="form-control" name="password" ngModel placeholder="Username" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div style="display: flex; justify-content: center;">
-                <button  type="submit" class="btn btn2 btn-danger">Login</button>
-            </div>
-        </form>
-            <div style="display: flex; justify-content: center;">
-                <p style="color:white;font-size: 14px ; font-weight: bold;">New User? Register Here</p>
-            </div>
-        </div>
-    </div>
+<div class="container-fluid mainbox">
+  <div class=" row mt-lg-5 mt-2 mb-2 mx-0 px-0 ps-lg-5 px-lg-5 d-flex flex-row-reverse mini">
+    <div class="col-xxl-2 "></div>
+      <div class="col-xxl-4 col-lg-6 col-md-5 col-sm-12 d-flex h-0 flex-column  " >
+          <div class="d-flex justify-content-center m-4" >
+              <button  type="button" class="fs-4 fw-bold btn btn-light">Login</button>
+              <div class="line"></div>
+              <button routerLink="/signup"  type="button" class="fs-4 fw-bold btn btn-light">Signup</button>
+          </div>
+          <div *ngIf="msg" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{msg}}</strong>
+            <button type="button " class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+          </div>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="input-group flex-nowrap mb-4" >
+              <span class="input-group-text" id="addon-wrapping"><img class="w-75" src="../../../assets/pic/mail.png" alt="" srcset=""> </span>
+              <input type="text" class="form-control" name="email"  ngModel required  placeholder="Email" aria-label="Username"
+                  aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group flex-nowrap mb-4">
+              <span class="input-group-text" id="addon-wrapping"><img class="w-75" src="../../../assets/pic/lock (1).png" alt="" srcset=""></span>
+              <input type="text" class="form-control" name="password" ngModel placeholder="Password" aria-label="Username"
+                  aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="d-flex justify-content-center mb-5" >
+              <button  type="submit" class="btn btn2 btn-danger w-50">Login</button>
+          </div>
+      </form>
+          <div class="d-flex justify-content-center fs-6 fw-bold" >
+              <p style="color:white;">New User? Register Here</p>
+          </div>
+      </div>
+      <div class="col-xxl-2"></div>
+  </div>
 </div>

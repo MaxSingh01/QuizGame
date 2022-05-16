@@ -1,100 +1,52 @@
-const mysql = require("mysql2")
+import User from '../modal/user.js'
+import mongoose from 'mongoose'
 
 
-const bcrypt = require('bcrypt');
-
-
-
-
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: '',
-    database: 'quiz',
-    
-})
-
-
-
-exports.registeruser = (req, res) => {
+mongoose.connect('mongodb://localhost:27017/userDB',{useNewUrlParser: true});
+export const registeruser = (req, res) => {
     console.log(req.body)
 
-    const { email,password,username} = req.body
-
-    db.query('SELECT email FROM register WHERE email=?', [email], async (error, result) => {
-        if (error) {
-            console.log(error);
-        }
-        if (result.length > 0) {
-
-            return  res.status(200).json({
-                message: "USER EXIST",
-              });
-        }
-        // else if (password !== repeatpass) {
-        //     return res.status(200).json( {
-        //         message: 'PASSWORD ARE NOT SAME '
-        //     })
-        // }
-
-        let hashedPassword = await bcrypt.hash(password, 8);
-        // console.log(hashedPassword)
-
-        db.query('INSERT INTO register SET ? ', { email: email, pass: hashedPassword,name:username }, (error, result) => {
-            if (error) { console.log(error) }
-            else {
-                // console.log(result)
-                return  res.status(200).json({
-                    message: "USER REGISTER",
-                  });
-
-            }
-
-
-
-        })
-
-
-    })
-
-
+    // const { email,password,username} = req.body
+    const newUser =new User({
+      email:req.body.email,
+      password:req.body.password,
+      name:req.body.username
+  })
+  newUser.save(function(err){
+      if(err){
+          console.log(err);
+      } else{
+         res.status(200).json({
+           message:"Signup SUCCESSFUL"
+         })
+      }
+  })
 }
 
-exports.checkUser=async (req,res)=>{
-    const email=req.body.email;
-    const password=req.body.password;
+export const checkUser=async (req,res)=>{
+    const Email=req.body.email;
+    const Password=req.body.password;
     
     console.log(req.body)
-       var sql = 'select * from register where email=?';
-       var query= mysql.format(sql,[email]);
-       db.query(await query, async function(err,row){
-         if(err){
-            return  res.status(200).json(error)
-              
-         }else{
-             console.log(row)
-        
-           const mainpassword=row[0].pass;
-          console.log(mainpassword);
-        //   console.log('password from user',password);
-          const userPassword=password;
-          console.log(userPassword)
-           
-           const passwordcheck=await bcrypt.compare(userPassword, mainpassword)
-          console.log(passwordcheck);
-           if(!passwordcheck){
-            return  res.status(200).json({
-                message: "INVALID EMAIL OR PASSWORD",
-              });
-           }else{
-            return  res.status(200).json({
-                message: "LOGIN SUCCESSFUL",
-              });
-           }
+    User.findOne({email:Email},(err,result)=>{
+      console.log(result)
+      if(err){
+          console.log(err)
+      }
+      else{
+          if(result){
+              if(result.password===Password){
+                res.status(200).json({
+                  message:"LOGIN SUCCESSFUL"
+                })
+              }else{
+                res.status(200).json({
+                  message:"Invalid Credentials !"
+                })
+              }
           }
-        }
-        )
+      }
+  })
   };
 
 
-// this is for modal data we are sending data from frontend and store this in database

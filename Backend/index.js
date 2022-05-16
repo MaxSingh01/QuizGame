@@ -1,31 +1,26 @@
-const express =require ('express')
-const mysql = require ('mysql2')
-const cors =require ('cors')
-const bodyparser=require('body-parser')
+// const express =require ('express');
+// const mysql = require ('mysql2');
+// const cors =require ('cors');
+// const bodyparser=require('body-parser');
+// const mongoose= require('mongoose');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
+import route from './routes/auth.js';
 
 
 const app=express();
 const PORT=3000;
 
 app.use(express.urlencoded({extended:false}))
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 app.use(cors());
 
-const db = mysql.createConnection({
-    host:'localhost',
-    password:'',
-    user:'root',
-    database:'quiz'
-})
-db.connect((error)=>{
-    if(error){console.log(error)}
-    console.log("database is connected successfully ........");
-})
 
-app.set('view engine','hbs')
-
-
-app.use('',require('./routes/auth'))
+mongoose.connect('mongodb://localhost:27017/userDB',{useNewUrlParser: true});
+app.use('/',route)
 
 
 app.listen(PORT,()=>{

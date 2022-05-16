@@ -1,14 +1,13 @@
+import express from 'express'
+import {registeruser, checkUser} from '../controller/auth.js'
 
-const express = require("express");
-const authController= require("../controller/auth")
-
-const router=express.Router();
+const route=express.Router();
 
 // router.post('/signup', authController.signup)
 
 // router.post('/', authController.login)
-router.post("/registeruser", authController.registeruser);
-router.post("/checkUser", authController.checkUser);
+route.post("/registeruser", registeruser);
+route.post("/checkUser",  checkUser);
 
 // router.post('/modaldata',authController.modaldata)
 
@@ -26,4 +25,4 @@ router.post("/checkUser", authController.checkUser);
 
 // router.put('/update',authController.update)
 
-module.exports=router;
+export default route 
