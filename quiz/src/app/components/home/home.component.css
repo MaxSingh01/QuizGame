@@ -4,14 +4,23 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
-.welcomebox{
+
+.main{
   display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* margin: auto; */
-    margin-left: auto;
-    width: 51%;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 90vh;
+  margin: auto !important;
+  height: 91%;
+}
+
+@media (max-width: 600px){
+.main{
+  width: 100% !important;
+}
+.typo{
+  font-size: 1.4rem !important;
+  margin-bottom: 30px !important;
+  text-align: start !important;
+}
+}
+.hamburger{
+ background-color: white;
 }

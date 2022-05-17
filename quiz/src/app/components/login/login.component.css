@@ -1,7 +1,7 @@
 .mainbox{
   display: flex;
    height: 100vh;
-  background-image: url('../../../assets/pic/joanna-kosinska-7ACuHoezUYk-unsplash.jpg');
+  background-image: url('https://unsplash.com/s/photos/dark-quiz-wallpaper');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
@@ -59,3 +59,8 @@ box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);
   margin: 15px;
   border: 2px solid white;
 }
+@media (min-width: 1400px){
+    .middle{
+      width: 56%;
+    }
+  }

@@ -61,3 +61,8 @@
     margin: 15px;
     border: 2px solid white;
 }
+@media (min-width: 1400px){
+    .middle{
+      width: 56%;
+    }
+  }
