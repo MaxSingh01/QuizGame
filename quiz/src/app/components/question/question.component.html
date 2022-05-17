@@ -2,8 +2,9 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
     <div class="container-fluid">
       <a class="navbar-brand fs-3 fw-bold" href="#" style="color: white;">Navbar</a>
-      <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,14 +31,13 @@
           <p class="fs-4 fw-bold"> {{name}}</p>
           <h1 class="fs-4  fw-bold">Question: {{currentQuestion+1}} of {{questionList.length}}</h1>
         </div>
-        <div  class="question d-flex justify-content-center mb" style="color: white;">
+        <div class="question d-flex justify-content-center mb" style="color: white;">
           <div class="=card">
-            <h3 class="fs-3 fw-bold"
-         >{{questionList[currentQuestion]?.questionText}}</h3>
+            <h3 class="fs-3 fw-bold">{{questionList[currentQuestion]?.questionText}}</h3>
           </div>
         </div>
-        <div class="option d-flex justify-content-center " >
-          <ol class=" w-50 ol m-auto mb"  *ngFor="let option of questionList[currentQuestion]?.options">
+        <div class="option d-flex justify-content-center ">
+          <ol class=" w-50 ol m-auto mb" *ngFor="let option of questionList[currentQuestion]?.options">
             <li (click)="answer(currentQuestion+1,option)">
               <div appChangeBg [iscorrect]="option.correct" class="card fs-3">{{option.text}}</div>
             </li>
@@ -56,57 +56,50 @@
 
 
   <ng-container *ngIf="isQUizComplete">
-    <div style="display:flex ;justify-content: center; padding-top: 3%;">
-      <div style="    display: flex;
-    flex-direction: column;
-    color: rgb(255, 255, 255);
-    border: 2px solid white; width: 40%; ">
+    <div class="main row mt-lg-5 mt-2 mb-2 mx-0 px-0 ps-lg-5 px-lg-5 m-auto">
+      <div class="col-xxl-4 col-lg-6 col-md-5 col-sm-12 d-flex h-0 flex-column w-100 d-flex justify-content-center pt-2">
+        <!-- <div class="d-flex flex-column w-50" style="color: rgb(255, 255, 255); border: 2px solid white;">
 
-        <div style="display: flex; padding: 22px">
-          <h1 style="font-size: 32px; font-weight: bold ;margin-bottom: 40px ;background: black; color :white">
-            LeaderBoard</h1>
-        </div>
-        <div style="display: flex; padding: 22px">
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">name</p>
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">score</p>
-        </div>
-        <div style="display: flex; padding: 22px">
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">Ajay</p>
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">9</p>
-        </div>
-        <div style="display: flex; padding: 22px">
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">{{name}}</p>
-          <p style="width: 100%;font-size: 22px; font-weight: bold ">{{correctAnswer}}</p>
-        </div>
-
-      </div>
-      <div style="    display: flex;
-    flex-direction: column;
-    padding: 1%">
-        <div>
-          <img style="       width: 13%;
-      display: flex;
-      margin: 0px 70%;
-      padding: 13px;" src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg" alt=""
-            srcset="">
-        </div>
-        <div style="color:  white; display: flex; flex-direction: column;">
-          <div
-            style="display: flex; flex-direction:column; margin-left: auto; font-size: 18px; font-weight: bold;margin-bottom: 40px ">
-            <h1 style="font-size: 32px; font-weight: bold ;margin-bottom: 40px ">Congratulations !! <br> You have
-              Compeleted the Quiz <br> Below is your result</h1>
-            <p style="margin-bottom: 40px ">Total Question :{{questionList.length}}</p>
-            <p style="margin-bottom: 40px ">Total Correct Answered:{{correctAnswer}}</p>
-            <p style="margin-bottom: 40px ">Total Wrong Answered:{{wrongAnswer}}</p>
-            <p style="margin-bottom: 40px ">Your Score:{{correctAnswer}}</p>
+          <div class="d-flex p-3">
+            <h1 class="fs-3 fw-bold mb-4 " style="background: black; color :white">
+              LeaderBoard</h1>
           </div>
-          <div style="display: flex; justify-content: flex-end;">
-            <button style="font-size: 25px; font-weight: bold;" class="btn btn2 btn-danger"
-              (click)="reset()">Reset</button>
+          <div class="d-flex p-4">
+            <p class="w-100 fs-4 fw-bold">name</p>
+            <p class="w-100 fs-4 fw-bold">score</p>
+          </div>
+          <div class="d-flex p-4">
+            <p class="w-100 fs-4 fw-bold">Ajay</p>
+            <p class="w-100 fs-4 fw-bold">9</p>
+          </div>
+          <div class="d-flex p-4">
+            <p class="w-100 fs-4 fw-bold">{{name}}</p>
+            <p class="w-100 fs-4 fw-bold">{{correctAnswer}}</p>
+          </div>
+
+        </div> -->
+          <div class="d-flex flex-column p-1">
+            <div class="d-flex justify-content-center">
+              <img class="w-25 d-flex ma" style="margin: 0px 70%;  padding: 13px;" src="" alt=""
+                srcset="">
+            </div>
+            <div class="d-flex flex-column" style="color:  white;">
+              <div class="d-flex flex-column me-auto fs-4 fw-bold mb-5">
+                <h1 class="fs-3 fw-bold mb-4" >Congratulations !! <br> You have
+                  Compeleted the Quiz <br> Below is your result</h1>
+                <p class="mb-4">Total Question :{{questionList.length}}</p>
+                <p class="mb-4">Total Correct Answered:{{correctAnswer}}</p>
+                <p class="mb-4">Total Wrong Answered:{{wrongAnswer}}</p>
+                <p class="mb-4">Your Score:{{correctAnswer}}</p>
+              </div>
+              <div class="d-flex justify-content-end" >
+                <button  class="fs-4 fw-bold btn btn2 btn-danger"
+                  (click)="reset()">Reset</button>
+              </div>
+            </div>
+
           </div>
         </div>
-
       </div>
-    </div>
   </ng-container>
 </div>

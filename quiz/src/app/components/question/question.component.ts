@@ -31,7 +31,8 @@ export class QuestionComponent implements OnInit {
     this.currentQuestion++
   }
   reset(){
-    window.location.reload()
+    this.isQUizComplete=false;
+    this.currentQuestion=0
   }
   priviousQuestion(){
     this.currentQuestion--
