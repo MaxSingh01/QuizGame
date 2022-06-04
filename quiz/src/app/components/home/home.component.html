@@ -1,7 +1,7 @@
 <div class="contaner">
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand fs-3 fw-bold" href="#" style="color: white;">Navbar</a>
+      <a class="navbar-brand fs-3 fw-bold" href="#" style="color: white;">Quiz Jungle</a>
       <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,14 +9,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active fs-4 fw-bold" aria-current="page" href="#" style="color: white;">Home</a>
+            <a routerLink="/home"class="nav-link active fs-6 " aria-current="page" href="#" style="color: white;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-6 " aria-current="page" href="#" style="color: white;">Logout</a>
           </li>
 
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -33,11 +32,11 @@
     <form class="d-flex flex-column  justify-content-center" >
       <div class="m-auto input-group flex-nowrap mb-5 d-flex w-75" >
         <input class=" typo fs-5 fw-bold mb-3"  #name type="text" class="form-control"
-          name="name" placeholder="Enter Your Username" aria-label="Username" aria-describedby="addon-wrapping">
+          name="name" placeholder="Enter Your Username For Quiz" aria-label="Username" aria-describedby="addon-wrapping">
       </div>
       <div class="d-flex m-auto" style="justify-content: flex-start;">
-        <button  class="typo fs-5 fw-bold btn btn2 btn-danger"
-          (click)="statquiz()">Login</button>
+        <button  class="typo fs-5 fw-bold btn btn2 btn-outline-success"
+          (click)="statquiz()">Continue...</button>
       </div>
     </form>
   </div>

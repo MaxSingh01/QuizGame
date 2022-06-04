@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  location:'http://localhost:3000'
+   location:'http://localhost:5000'
+  // location:'https://back-quiz.herokuapp.com'
+
 };
 
 /*

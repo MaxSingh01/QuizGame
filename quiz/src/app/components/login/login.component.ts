@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private _service: ServicesService,private router:Router) { }
 
   ngOnInit(): void {
-    
+
   }
   onSubmit(f: NgForm) {
     console.log(f.value);
@@ -31,5 +31,6 @@ export class LoginComponent implements OnInit {
       f.reset();
     })
   }
+ 
 
 }

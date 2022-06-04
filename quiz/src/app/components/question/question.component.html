@@ -1,7 +1,7 @@
 <div class="contaner">
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand fs-3 fw-bold" href="#" style="color: white;">Navbar</a>
+      <a class="navbar-brand fs-3 fw-bold" href="#" style="color: white;">Quiz Jungle</a>
       <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -10,14 +10,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active fs-4 fw-bold" aria-current="page" href="#" style="color: white;">Home</a>
+            <a routerLink="/home" class="nav-link active fs-6 " aria-current="page" href="#" style="color: white;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-6 " aria-current="page" href="#" style="color: white;">Logout</a>
           </li>
 
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
       </div>
     </div>
   </nav>
@@ -28,7 +28,7 @@
         class="welcomebox d-flex justify-content-center flex-column col-xxl-4 col-lg-6 col-md-5 col-sm-12 d-flex h-0 flex-column w-100 ">
         <div class="d-flex flex-column" style=" color: white;">
           <h1 class="fs-2  fw-bold">Welcome TO Quiz</h1>
-          <p class="fs-4 fw-bold"> {{name}}</p>
+          <p class="fs-4 fw-bold">{{name}}</p>
           <h1 class="fs-4  fw-bold">Question: {{currentQuestion+1}} of {{questionList.length}}</h1>
         </div>
         <div class="question d-flex justify-content-center mb" style="color: white;">
@@ -93,7 +93,7 @@
                 <p class="mb-4">Your Score:{{correctAnswer}}</p>
               </div>
               <div class="d-flex justify-content-end" >
-                <button  class="fs-4 fw-bold btn btn2 btn-danger"
+                <button  class="fs-4 fw-bold btn btn2  btn-outline-success"
                   (click)="reset()">Reset</button>
               </div>
             </div>

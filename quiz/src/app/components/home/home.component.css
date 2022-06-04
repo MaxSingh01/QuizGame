@@ -1,8 +1,11 @@
 .contaner{
   height: 100vh;
-  background-image: url('../../../assets/pic/joanna-kosinska-7ACuHoezUYk-unsplash.jpg');
+  background-image: url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
+}
+.card-img-top{
+  height:  150px
 }
 
 .main{

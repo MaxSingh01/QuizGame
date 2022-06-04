@@ -23,6 +23,7 @@ export class ServicesService {
     return this.http.post(environment.location+'/checkUser',data,httpOption);
   }
   public getQuestionJson(){
-    return this.http.get<any>("assets/question.json")
+    return this.http.get("assets/question.json")
   }
+
 }
